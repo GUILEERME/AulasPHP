@@ -42,6 +42,7 @@
                 if($email == $usuario['email'] && $senha == $usuario['senha']){
                     // Armazena na session o nome do usuário logado
                     $_SESSION['usuario'] = $usuario['nome'];
+                    date_default_timezone_set('America/Sao_Paulo');
                     $data=  date('H:i');
                     $_SESSION['horario'] = $data;
                     //direciona o navegador para a página index.php
