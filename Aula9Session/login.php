@@ -11,6 +11,36 @@
         $senha = $_POST['senha_u'];
     }
 
+    // Verifica se o e-mail está sendo setado(preenchido)
+    if(isset($_POST['email_u'])){
+        // Vetor armazena os usuários que poderão logar
+        $usuarios = [
+            [
+                'nome'=> 'professor',
+                'email'=> 'professor@gmail.com',
+                'senha'=> '123',
+            ],
+            [
+                'nome'=> 'aluno',
+                'email'=> 'aluno@gmail.com',
+                'senha'=> '456',
+            ]
+            ];
+
+            // Percorre vetor para verificar se e-mail e senha estão
+            // corretos
+            foreach($usuarios as $usuario){
+                // caso email e senha sejam válidos, armazena na sessão
+                // o nome de usuário logado
+                if($email == $usuario['email'] && $senha == $usuario['senha']){
+                    // Armazena na session o nome do usuário logado
+                    $_SESSION['usuario'] = $usuario['nome'];
+                    //direciona o navegador para a página index.php
+                    header('Location: index.php');
+
+                }
+    }
+} // fecha if 
 ?>
 
 
