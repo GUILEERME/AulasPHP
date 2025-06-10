@@ -1,0 +1,17 @@
+*{
+    margin:0;
+    padding:0;
+}    
+
+a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.cabecalho {
+    background-color: gray;
+    text-align: right;
+    height: 40px;
+    padding-right: 20px;
+    padding-top: 10px;
+}
