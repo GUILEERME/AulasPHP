@@ -23,5 +23,6 @@
         <a href="logout.php"> Sair </a>
     </div>
     <h1>Bem-vindo <?= $_SESSION['usuario'] ?></h1>
+    <h1>Você logou às <?=$_SESSION['horario']?></h1>
 </body>
 </html>

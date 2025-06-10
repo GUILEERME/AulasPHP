@@ -2,6 +2,8 @@
     // Inicializa a sessão
     session_start();
 
+  
+
     // Armazena em variáveis e-mail e senha digitados
     // pelo usuário enviados através do método POST
     if(isset($_POST['email_u'])){
@@ -24,6 +26,11 @@
                 'nome'=> 'aluno',
                 'email'=> 'aluno@gmail.com',
                 'senha'=> '456',
+            ],
+            [
+                'nome'=> 'jão pedro',
+                'email'=> 'jaopedro@gmail.com',
+                'senha '=> '1',
             ]
             ];
 
@@ -35,9 +42,10 @@
                 if($email == $usuario['email'] && $senha == $usuario['senha']){
                     // Armazena na session o nome do usuário logado
                     $_SESSION['usuario'] = $usuario['nome'];
+                    $data=  date('H:i');
+                    $_SESSION['horario'] = $data;
                     //direciona o navegador para a página index.php
                     header('Location: index.php');
-
                 }
     }
 } // fecha if 
