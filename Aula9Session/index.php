@@ -1,3 +1,15 @@
+<?php
+
+    session_start();
+
+    // Ao abrir página index.php, verifica se não tem usuário
+    // na sessão e redireciona para a página login
+    if(!$_SESSION['usuario'])
+    {
+        header('Location:login.php');
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +22,6 @@
     <div class="cabecalho">
         <a href="logout.php"> Sair </a>
     </div>
-    <h1>Bem-vindo</h1>
+    <h1>Bem-vindo <?= $_SESSION['usuario'] ?></h1>
 </body>
 </html>
